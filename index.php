@@ -173,6 +173,23 @@
 
         }
 
+  	windBox
+        {
+            font-family: "Courier New";
+            color: black;
+           /* font-size: 25.5vw */
+           /* border: 2px solid #4e4e50; */ //dark grey
+           border: 2px solid black;
+           /* border-left: hidden; */
+            /* border-bottom: hidden; */
+           /* padding-top: 10px; */
+
+            padding: 5px;
+            background-color: #FEFEFE; //light grey
+
+            /*left: 10%; */
+
+        }
 	picBox
         {
             font-family: "Courier New";
@@ -209,7 +226,7 @@
                     <tempBox> 
 						<redText>Air Temperature: </redText>
 						<?php
-						$myfile = fopen("temp.txt", "r") or die("Unable to open file!");
+						$myfile = fopen("temp.txt", "r");
 						echo fread($myfile,filesize("temp.txt"));
 						fclose($myfile);
 						?>
@@ -218,7 +235,7 @@
                     <soilBox> 
 						<redText>Soil Temperature: </redText>
 						<?php
-						$myfile = fopen("soil.txt", "r") or die("Unable to open file!");
+						$myfile = fopen("soil.txt", "r");
 						echo fread($myfile,filesize("soil.txt"));
 						fclose($myfile);
 						?>
@@ -227,7 +244,7 @@
                     <humBox> 
 						<redText>Humidity: </redText>
 						<?php
-						$myfile = fopen("hum.txt", "r") or die("Unable to open file!");
+						$myfile = fopen("hum.txt", "r");
 						echo fread($myfile,filesize("hum.txt"));
 						fclose($myfile);
 						?>
@@ -236,13 +253,22 @@
                     <airBox> 
 						<redText>Air Pressure: </redText>
 						<?php
-						$myfile = fopen("air.txt", "r") or die("Unable to open file!");
-						echo fread($myfile,filesize("air.txt"));
+						$myfile = fopen("pres.txt", "r");
+						echo fread($myfile,filesize("pres.txt"));
 						fclose($myfile);
 						?>
 					</airBox>
 
-		    
+					
+					  <windBox> 
+						<redText>Wind Speed: </redText>
+						<?php
+						$myfile = fopen("air.txt", "r");
+						echo fread($myfile,filesize("air.txt"));
+						fclose($myfile);
+						?>
+					</windBox>
+
                 </div>
             </div>
 
